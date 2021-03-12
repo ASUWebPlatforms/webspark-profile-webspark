@@ -42,6 +42,7 @@ install:
   - media
   - media_library
   - layout_builder
+  - components
 themes:
   - bartik
   - seven
