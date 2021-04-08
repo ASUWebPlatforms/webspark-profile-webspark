@@ -28,4 +28,5 @@ settings:
   asu_brand_header_block_cta1_url: ''
   asu_brand_header_block_cta2_label: ''
   asu_brand_header_block_cta2_url: ''
+  asu_brand_header_block_expand_on_hover: 0
 visibility: {  }

@@ -32,14 +32,14 @@ class WebsparkConfigureHeaderForm extends ConfigFormBase {
 
     $form['parent_unit_name'] = [
       '#maxlength' => 20,
-      '#size' => 20,
+      '#size' => 60,
       '#title' => $this->t('Parent unit name'),
       '#type' => 'textfield',
       '#default_value' => '',
     ];
     $form['parent_department_url'] = [
       '#maxlength' => 20,
-      '#size' => 20,
+      '#size' => 100,
       '#title' => $this->t('Parent Department URL'),
       '#type' => 'textfield',
       '#default_value' => '',
