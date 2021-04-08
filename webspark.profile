@@ -34,6 +34,12 @@ function webspark_form_install_configure_submit($form, FormStateInterface $form_
 
 function webspark_install_tasks_alter(&$tasks, $install_state) {
   $academic_site = \Drupal::state()->get('academic_site', FALSE);
+  $tasks['webspark_install_configure_header_form'] = [
+    'display_name' => t('Header'),
+    'type' => 'form',
+    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureHeaderForm',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+  ];
   $tasks['webspark_install_configure_academic_site_form'] = [
     'display_name' => t('Academic Unit'),
     'type' => 'form',
