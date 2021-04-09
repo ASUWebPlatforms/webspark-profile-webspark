@@ -5,6 +5,8 @@ dependencies:
     - filter.format.basic_html
   module:
     - ckeditor
+_core:
+  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
 format: basic_html
 editor: ckeditor
 settings:
@@ -14,6 +16,7 @@ settings:
         -
           name: Formatting
           items:
+            - Styles
             - Bold
             - Italic
         -
@@ -40,13 +43,15 @@ settings:
           items:
             - Source
   plugins:
+    language:
+      language_list: un
     stylescombo:
-      styles: ''
+      styles: "h1.article| Long h1 titles\r\nmark|Highlight text copy\r\n\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\n\r\nspan.copy-divider| Copy Divider Gold\r\n"
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null
