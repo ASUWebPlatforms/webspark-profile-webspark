@@ -50,6 +50,14 @@ install:
   - paragraphs
   - fontawesome
   - fontawesome_iconpicker_widget
+  - webspark_module_renovation_layouts
+  - crop
+  - image_widget_crop
+  - lb_section_navigation
+  - media_library_theme_reset
+  - layout_builder_restrictions
+  - webspark_module_views_pager
+  - webspark_blocks
 themes:
   - bartik
   - seven
