@@ -16,6 +16,9 @@ use Drupal\shortcut\Entity\Shortcut;
  * @see system_install()
  */
 function webspark_install() {
+  // Enable radix theme.
+  \Drupal::service('theme_installer')
+    ->install(['radix']);
   //Set default theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
@@ -27,7 +30,8 @@ function webspark_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
-  // Enable webspark_installer module
-  \Drupal::service('module_installer')->install(['webspark_installer_forms'], TRUE);
+  // Enable webspark_installer module.
+  \Drupal::service('module_installer')
+    ->install(['webspark_installer_forms'], TRUE);
 
 }

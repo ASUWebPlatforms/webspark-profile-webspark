@@ -64,7 +64,10 @@ class WebsparkConfigureGAForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
+    $config_factory = \Drupal::configFactory();
+    $config_factory->getEditable('asu_brand.settings')
+      ->set('asu_brand.asu_brand_extra_gtm_id', $form_state->getValue('google_analytics_account'))
+      ->save();
   }
 
 }

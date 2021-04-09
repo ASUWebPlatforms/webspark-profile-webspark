@@ -4,7 +4,7 @@ core_version_requirement: ^9.0
 description: 'ASU custom profile.'
 version: 1.0.0-alpha
 install:
-  # Standard.
+  # Webspark.
   - node
   - history
   - block
@@ -43,6 +43,13 @@ install:
   - media_library
   - layout_builder
   - components
+  - cas
+  - asu_brand
+  - webspark_utility
+  - select2
+  - paragraphs
+  - fontawesome
+  - fontawesome_iconpicker_widget
 themes:
   - bartik
   - seven
