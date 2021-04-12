@@ -43,10 +43,13 @@ settings:
           items:
             - Source
   plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
     language:
       language_list: un
     stylescombo:
-      styles: "h1.article| Long h1 titles\r\nmark|Highlight text copy\r\n\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\n\r\nspan.copy-divider| Copy Divider Gold\r\n"
+      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\ndiv.span.copy-divider.gold| Copy Divider Gold\r\ndiv.span.copy-divider.dark| Copy Divider Black\r\ndiv.span.copy-divider.maroon| Copy Divider Maroon"
 image_upload:
   status: true
   scheme: public
