@@ -59,6 +59,8 @@ install:
   - webspark_module_views_pager
   - webspark_blocks
   - linkit
+  - current_page_crumb
+  - pathauto
 themes:
   - bartik
   - seven
