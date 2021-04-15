@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
   module:
     - editor
     - linkit
@@ -47,12 +49,14 @@ filters:
   media_embed:
     id: media_embed
     provider: media
-    status: false
+    status: true
     weight: 100
     settings:
       default_view_mode: default
-      allowed_media_types: {  }
-      allowed_view_modes: {  }
+      allowed_media_types:
+        remote_video: remote_video
+      allowed_view_modes:
+        media_library: media_library
   linkit:
     id: linkit
     provider: linkit

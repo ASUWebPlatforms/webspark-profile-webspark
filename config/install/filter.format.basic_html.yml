@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
   module:
     - editor
     - linkit
@@ -17,7 +19,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <h1 class="article"> <mark> <span class="highlight-gold highlight-black btn btn-gold btn-maroon btn-gray btn-dark copy-divider"> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title> <div class="span copy-divider gold dark maroon">'
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <h1 class="article"> <mark> <span class="highlight-gold highlight-black btn btn-gold btn-maroon btn-gray btn-dark copy-divider"> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title> <div class="span copy-divider gold dark maroon"> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -47,12 +49,14 @@ filters:
   media_embed:
     id: media_embed
     provider: media
-    status: false
+    status: true
     weight: 100
     settings:
       default_view_mode: default
-      allowed_media_types: {  }
-      allowed_view_modes: {  }
+      allowed_media_types:
+        remote_video: remote_video
+      allowed_view_modes:
+        media_library: media_library
   linkit:
     id: linkit
     provider: linkit

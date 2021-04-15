@@ -6,7 +6,7 @@
  */
 
 use Drupal\user\Entity\User;
-use Drupal\shortcut\Entity\Shortcut;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * Implements hook_install().
@@ -34,4 +34,11 @@ function webspark_install() {
   \Drupal::service('module_installer')
     ->install(['webspark_installer_forms'], TRUE);
 
+  // Populate the main menu.
+  $home = MenuLinkContent::create(array(
+    'title' => t('Home'),
+    'link' => array('uri' => 'internal:/'),
+    'menu_name' => 'main',
+  ));
+  $home->save();
 }
