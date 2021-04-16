@@ -61,6 +61,7 @@ install:
   - linkit
   - current_page_crumb
   - pathauto
+  - webspark_isearch
 themes:
   - bartik
   - seven
