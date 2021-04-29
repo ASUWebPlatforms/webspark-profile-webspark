@@ -8,7 +8,7 @@ dependencies:
     - linkit
     - media
 _core:
-  default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
+  default_config_hash: fPUiLDsBFV0-DzD93BCVRdctf92WT7kT4Z2SYpdfiW8
 name: 'Full HTML'
 format: full_html
 weight: 2
@@ -46,6 +46,13 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
       filter_html_help: true
       filter_html_nofollow: false
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
   media_embed:
     id: media_embed
     provider: media
@@ -57,10 +64,3 @@ filters:
         remote_video: remote_video
       allowed_view_modes:
         media_library: media_library
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: 0
-    settings:
-      title: true

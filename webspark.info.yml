@@ -62,6 +62,17 @@ install:
   - current_page_crumb
   - pathauto
   - webspark_isearch
+  - media_library_form_element
+  - admin_toolbar
+  - allowed_formats
+  - field_menu
+  - webspark_section_navigation
+  - asu_react_integration
+  - asu_news
+  - asu_events
+  - asu_footer
+  - webspark_module_asu_breadcrumb
+  - datetime_range
 themes:
   - bartik
   - seven
