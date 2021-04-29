@@ -8,7 +8,7 @@ dependencies:
     - linkit
     - media
 _core:
-  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+  default_config_hash: 9ZZXP3Ux0HrYpzW3-OgSWYzI8AW7o5wAbhC9MbMOPWE
 name: 'Basic HTML'
 format: basic_html
 weight: 0
@@ -46,6 +46,13 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
   media_embed:
     id: media_embed
     provider: media
@@ -57,10 +64,3 @@ filters:
         remote_video: remote_video
       allowed_view_modes:
         media_library: media_library
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: 0
-    settings:
-      title: true

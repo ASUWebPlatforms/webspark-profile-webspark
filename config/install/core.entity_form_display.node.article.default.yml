@@ -3,19 +3,15 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.comment
-    - field.field.node.article.field_image
-    - field.field.node.article.field_tags
+    - field.field.node.article.field_media
     - field.field.node.article.layout_builder__layout
-    - image.style.thumbnail
     - node.type.article
   module:
-    - comment
-    - image
+    - media_library
     - path
     - text
 _core:
-  default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
+  default_config_hash: MzgQq_hs4iUdxOl0nFU4x7HIXGsF0Krfc9LTipfWpTA
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -31,36 +27,19 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment:
-    type: comment_default
-    weight: 20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
-    type: image_image
-    weight: 4
-    region: content
+  field_media:
+    type: media_library_widget
+    weight: 121
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   path:
     type: path
     weight: 30

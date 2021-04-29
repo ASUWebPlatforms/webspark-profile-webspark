@@ -6,7 +6,7 @@ dependencies:
   module:
     - ckeditor
 _core:
-  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+  default_config_hash: I-y7g6LZ1lBZqGH72maCSZwiLHIiJkIWjVdTcmcYWAY
 format: full_html
 editor: ckeditor
 settings:
@@ -39,6 +39,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - DrupalMediaLibrary
             - Table
             - HorizontalRule
         -
@@ -57,7 +58,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\ndiv.span.copy-divider.gold| Copy Divider Gold\r\ndiv.span.copy-divider.dark| Copy Divider Black\r\ndiv.span.copy-divider.maroon| Copy Divider Maroon\r\n"
+      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.highlight-white|White Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\ndiv.span.copy-divider.gold| Copy Divider Gold\r\ndiv.span.copy-divider.dark| Copy Divider Black\r\ndiv.span.copy-divider.maroon| Copy Divider Maroon"
 image_upload:
   status: true
   scheme: public
