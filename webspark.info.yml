@@ -73,6 +73,7 @@ install:
   - asu_footer
   - webspark_module_asu_breadcrumb
   - datetime_range
+  - asu_react_core
 themes:
   - bartik
   - seven
