@@ -39,6 +39,7 @@ function webspark_install() {
     'title' => t('Home'),
     'link' => array('uri' => 'internal:/'),
     'menu_name' => 'main',
+    'weight' => -50,
   ));
   $home->save();
 }
