@@ -2,13 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.medium
+    - core.entity_view_mode.media.small
   module:
     - editor
     - linkit
     - media
-_core:
-  default_config_hash: 9ZZXP3Ux0HrYpzW3-OgSWYzI8AW7o5wAbhC9MbMOPWE
 name: 'Basic HTML'
 format: basic_html
 weight: 0
@@ -17,50 +16,78 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -50
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <h1 class="article"> <mark> <span class="highlight-gold highlight-black btn btn-gold btn-maroon btn-gray btn-dark copy-divider"> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title> <div class="span copy-divider gold dark maroon"> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
+      allowed_html: '<em> <strong> <cite class=""> <blockquote cite class=""> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <p> <br> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <h1 class="article"> <mark> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title class=""> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <span class="highlight-gold highlight-black highlight-white"> <hr class=""> <h2 id class=""> <div class=""> <svg title role viewBox> <path d>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: 7
+    weight: -48
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: 8
+    weight: -47
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: true
-    weight: 9
+    weight: -46
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: 11
+    weight: -45
     settings: {  }
   linkit:
     id: linkit
     provider: linkit
     status: true
-    weight: 0
+    weight: -49
     settings:
       title: true
   media_embed:
     id: media_embed
     provider: media
     status: true
-    weight: 100
+    weight: -44
     settings:
       default_view_mode: default
       allowed_media_types:
+        image_block_images: image_block_images
         remote_video: remote_video
       allowed_view_modes:
-        media_library: media_library
+        default: default
+        medium: medium
+        small: small
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -40
+    settings:
+      filter_url_length: 72

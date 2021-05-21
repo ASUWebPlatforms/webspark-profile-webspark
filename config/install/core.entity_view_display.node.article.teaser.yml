@@ -3,31 +3,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.article.body
+    - field.field.node.article.field_header_style
     - field.field.node.article.field_media
     - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
-    - text
     - user
-_core:
-  default_config_hash: 5Ug1WW8Jx29zJeQL6D4vj370vD0q8-ODYIBUY1gbSQE
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    weight: 0
-    region: content
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    label: hidden
   links:
     weight: 100
     region: content
 hidden:
+  field_header_style: true
   field_media: true
   layout_builder__layout: true

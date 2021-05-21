@@ -7,8 +7,8 @@ dependencies:
     - renovation
 id: primaryadminactions
 theme: renovation
-region: content
-weight: 1
+region: pre_content
+weight: -1
 provider: null
 plugin: local_actions_block
 settings:
