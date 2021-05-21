@@ -78,6 +78,7 @@ install:
   - field_group
   - asu_components_appearance
   - metatag
+  - webspark_ckeditor_plugins
 themes:
   - bartik
   - seven
