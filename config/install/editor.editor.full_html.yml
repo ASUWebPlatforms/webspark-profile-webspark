@@ -5,8 +5,6 @@ dependencies:
     - filter.format.full_html
   module:
     - ckeditor
-_core:
-  default_config_hash: I-y7g6LZ1lBZqGH72maCSZwiLHIiJkIWjVdTcmcYWAY
 format: full_html
 editor: ckeditor
 settings:
@@ -37,7 +35,6 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
             - DrupalImage
             - DrupalMediaLibrary
             - Table
@@ -51,6 +48,12 @@ settings:
           items:
             - ShowBlocks
             - Source
+        -
+          name: Webspark
+          items:
+            - WebsparkButton
+            - WebsparkDivider
+            - WebsparkBlockquote
   plugins:
     drupallink:
       linkit_enabled: true

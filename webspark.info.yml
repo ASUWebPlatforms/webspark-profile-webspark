@@ -50,6 +50,7 @@ install:
   - paragraphs
   - fontawesome
   - fontawesome_iconpicker_widget
+  - layout_section_classes
   - webspark_module_renovation_layouts
   - crop
   - image_widget_crop
@@ -74,6 +75,9 @@ install:
   - webspark_module_asu_breadcrumb
   - datetime_range
   - asu_react_core
+  - field_group
+  - asu_components_appearance
+  - metatag
 themes:
   - bartik
   - seven

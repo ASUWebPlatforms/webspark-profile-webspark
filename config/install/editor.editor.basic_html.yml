@@ -5,8 +5,6 @@ dependencies:
     - filter.format.basic_html
   module:
     - ckeditor
-_core:
-  default_config_hash: 2l-pOYB53i8QO6boeIDI2XYxBZ1c3ET4OchgiZ8AiWI
 format: basic_html
 editor: ckeditor
 settings:
@@ -32,8 +30,6 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
-            - DrupalImage
             - DrupalMediaLibrary
         -
           name: 'Block Formatting'
@@ -43,6 +39,13 @@ settings:
           name: Tools
           items:
             - Source
+        -
+          name: Webspark
+          items:
+            - WebsparkButton
+            - WebsparkDivider
+            - HorizontalRule
+            - WebsparkBlockquote
   plugins:
     drupallink:
       linkit_enabled: true
@@ -50,7 +53,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.highlight-white|White Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\ndiv.span.copy-divider.gold| Copy Divider Gold\r\ndiv.span.copy-divider.dark| Copy Divider Black\r\ndiv.span.copy-divider.maroon| Copy Divider Maroon"
+      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.highlight-white|White Highlight"
 image_upload:
   status: true
   scheme: public

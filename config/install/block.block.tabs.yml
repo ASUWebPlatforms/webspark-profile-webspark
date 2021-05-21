@@ -7,8 +7,8 @@ dependencies:
     - renovation
 id: tabs
 theme: renovation
-region: content
-weight: 0
+region: pre_content
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:
