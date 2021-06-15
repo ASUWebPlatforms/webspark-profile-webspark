@@ -31,7 +31,7 @@ class WebsparkConfigureHeaderForm extends ConfigFormBase {
     $form['#title'] = $this->t('Webspark Config: Header');
 
     $form['parent_unit_name'] = [
-      '#maxlength' => 20,
+      '#maxlength' => 50,
       '#size' => 60,
       '#title' => $this->t('Parent unit name'),
       '#type' => 'textfield',
