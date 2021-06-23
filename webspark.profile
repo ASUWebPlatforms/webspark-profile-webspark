@@ -40,52 +40,9 @@ function webspark_install_tasks_alter(&$tasks, $install_state) {
     'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureHeaderForm',
     'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
   ];
-  $tasks['webspark_install_configure_academic_site_form'] = [
-    'display_name' => t('Academic Unit'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureAcademicUnitForm',
-    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-  ];
-  $tasks['webspark_install_configure_degree_pages_form'] = [
-    'display_name' => t('Degree Pages'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureDegreePagesForm',
-    'run' => ($academic_site) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
-  ];
-  $tasks['webspark_install_configure_logo_footer_form'] = [
-    'display_name' => t('Custom Logo Footer'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureFooterLogoForm',
-    'run' => ($academic_site) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
-  ];
-  $tasks['webspark_install_configure_news_feed_form'] = [
-    'display_name' => t('News Feed'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureNewsFeedForm',
-  ];
-  $tasks['webspark_install_configure_events_feed_form'] = [
-    'display_name' => t('Events Feed'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureEventsFeedForm',
-  ];
-  $tasks['webspark_install_configure_directory_form'] = [
-    'display_name' => t('Department/unit/college directory'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureDirectoryForm',
-  ];
-  $tasks['webspark_install_configure_megafooter_form'] = [
-    'display_name' => t('Megafooter'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureMegafooterForm',
-  ];
   $tasks['webspark_install_configure_ga_form'] = [
     'display_name' => t('Google Analytics'),
     'type' => 'form',
     'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureGAForm',
-  ];
-  $tasks['webspark_install_configure_subtheme_form'] = [
-    'display_name' => t('Subtheme'),
-    'type' => 'form',
-    'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureSubthemeForm',
   ];
 }
