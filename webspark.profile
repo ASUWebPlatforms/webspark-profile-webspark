@@ -29,7 +29,11 @@ function webspark_form_install_configure_form_alter(&$form, FormStateInterface $
  * Submission handler to sync the contact.form.feedback recipient.
  */
 function webspark_form_install_configure_submit($form, FormStateInterface $form_state) {
-  //@TODO custom tasks
+  //Set header block title.
+  $config_factory = \Drupal::configFactory();
+  $block = $config_factory->getEditable('block.block.asubrandheader');
+  $block->set('settings.asu_brand_header_block_title', $form_state->getValue('site_name'));
+  $block->save(TRUE);
 }
 
 function webspark_install_tasks_alter(&$tasks, $install_state) {
