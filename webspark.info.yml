@@ -79,6 +79,7 @@ install:
   - asu_components_appearance
   - metatag
   - webspark_ckeditor_plugins
+  - asu_user
 themes:
   - bartik
   - seven
