@@ -20,6 +20,12 @@ third_party_settings:
         layout_id: onecol_full_width_section
         layout_settings:
           label: Top
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: onecol_fixed_width_section
+        layout_settings:
+          label: Content
         components:
           b1f7d7f8-38d7-4200-8c45-357e5160b763:
             uuid: b1f7d7f8-38d7-4200-8c45-357e5160b763
@@ -55,12 +61,6 @@ third_party_settings:
                 type: text_default
             additional: {  }
             weight: 1
-        third_party_settings: {  }
-      -
-        layout_id: onecol_fixed_width_section
-        layout_settings:
-          label: Content
-        components: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
