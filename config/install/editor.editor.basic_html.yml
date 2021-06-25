@@ -47,6 +47,7 @@ settings:
             - HorizontalRule
             - WebsparkBlockquote
             - WebsparkHighlightedHeading
+            - WebsparkLead
   plugins:
     drupallink:
       linkit_enabled: true
