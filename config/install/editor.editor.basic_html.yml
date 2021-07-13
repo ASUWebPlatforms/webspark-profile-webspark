@@ -48,6 +48,10 @@ settings:
             - WebsparkBlockquote
             - WebsparkHighlightedHeading
             - WebsparkLead
+        -
+          name: Table
+          items:
+            - WebsparkTable
   plugins:
     drupallink:
       linkit_enabled: true
