@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.large
     - core.entity_view_mode.media.medium
     - core.entity_view_mode.media.small
   module:
@@ -60,10 +61,13 @@ filters:
     settings:
       default_view_mode: default
       allowed_media_types:
+        cropped_image_sqare: cropped_image_sqare
+        cropped_image_wide: cropped_image_wide
         image_block_images: image_block_images
         remote_video: remote_video
       allowed_view_modes:
         default: default
+        large: large
         medium: medium
         small: small
   filter_autop:
