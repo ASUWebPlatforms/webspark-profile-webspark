@@ -80,6 +80,8 @@ install:
   - metatag
   - webspark_ckeditor_plugins
   - asu_user
+  - webspark_cropper_theme
+  - asu_degree_rfi
 themes:
   - bartik
   - seven
