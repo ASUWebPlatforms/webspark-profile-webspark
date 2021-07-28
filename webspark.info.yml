@@ -80,6 +80,7 @@ install:
   - webspark_ckeditor_plugins
   - asu_user
   - webspark_cropper_theme
+  - seckit
 themes:
   - bartik
   - seven
