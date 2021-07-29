@@ -79,6 +79,8 @@ install:
   - asu_user
   - webspark_cropper_theme
   - seckit
+  - redirect
+  - simple_sitemap
 themes:
   - bartik
   - seven
