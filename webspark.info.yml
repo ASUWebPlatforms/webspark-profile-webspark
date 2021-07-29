@@ -54,7 +54,6 @@ install:
   - webspark_module_renovation_layouts
   - crop
   - image_widget_crop
-  - lb_section_navigation
   - layout_builder_restrictions
   - webspark_module_views_pager
   - webspark_blocks
@@ -66,7 +65,6 @@ install:
   - admin_toolbar
   - allowed_formats
   - field_menu
-  - webspark_section_navigation
   - asu_react_integration
   - asu_news
   - asu_events
