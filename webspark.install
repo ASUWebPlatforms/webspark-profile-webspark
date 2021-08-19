@@ -43,3 +43,17 @@ function webspark_install() {
   ));
   $home->save();
 }
+
+/**
+ * Install the webform module and set its defaults.
+ */
+function webspark_update_9001(&$sandbox) {
+  \Drupal::service("module_installer")->install(["inline_form_errors"]);
+  \Drupal::service("module_installer")->install(["webform"]);
+  \Drupal::service('module_installer')->install(['webform_ui']);
+
+  // Enable default (global) disable client-side validation on all webforms.
+  \Drupal::configFactory()->getEditable('webform.settings')
+    ->set('settings.default_form_novalidate', TRUE)
+    ->save();
+}
