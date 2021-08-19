@@ -81,6 +81,9 @@ install:
   - seckit
   - redirect
   - simple_sitemap
+  - inline_form_errors
+  - webform
+  - webform_ui
 themes:
   - bartik
   - seven

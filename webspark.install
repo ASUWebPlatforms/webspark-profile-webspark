@@ -42,6 +42,11 @@ function webspark_install() {
     'weight' => -50,
   ));
   $home->save();
+
+  // Enable default (global) disable client-side validation on all webforms.
+  \Drupal::configFactory()->getEditable('webform.settings')
+    ->set('settings.default_form_novalidate', TRUE)
+    ->save();
 }
 
 /**
