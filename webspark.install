@@ -58,7 +58,6 @@ function webspark_update_9001(&$sandbox) {
   \Drupal::service('module_installer')->install(['webform_ui']);
   \Drupal::service('module_installer')->install(['config_update']);
   \Drupal::service('module_installer')->install(['config_readonly']);
-  \Drupal::service('module_installer')->install(['entity_clone']);
 
   // Enable default (global) disable client-side validation on all webforms.
   \Drupal::configFactory()->getEditable('webform.settings')
