@@ -87,6 +87,7 @@ install:
   - entity_clone
   - config_readonly
   - config_update
+  - robotstxt
 themes:
   - bartik
   - seven

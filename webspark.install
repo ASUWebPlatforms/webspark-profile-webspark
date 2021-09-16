@@ -65,3 +65,14 @@ function webspark_update_9001(&$sandbox) {
     ->set('settings.default_form_novalidate', TRUE)
     ->save();
 }
+
+/**
+ * Add the robots txt module.
+ */
+function webspark_update_9002(&$sandbox) {
+  \Drupal::service("module_installer")->install(["robotstxt"]);
+
+  // Remove the robots file.
+  unlink('robots.txt');
+  // Clear browser cache to test right after: CTRL+R.
+}
