@@ -86,6 +86,9 @@ install:
   - webform_ui
   - config_update
   - robotstxt
+  - captcha
+  - schema_metatag
+  - editoria11y
 themes:
   - bartik
   - seven
