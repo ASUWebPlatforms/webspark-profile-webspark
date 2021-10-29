@@ -63,6 +63,7 @@ filters:
       allowed_media_types:
         cropped_image_sqare: cropped_image_sqare
         cropped_image_wide: cropped_image_wide
+        document: document
         image_block_images: image_block_images
         remote_video: remote_video
       allowed_view_modes:
