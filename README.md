@@ -52,9 +52,10 @@ for details.
 ## Known limitations
 
 Because most of the configurations in this module should not be changed after
-an instance of a site is built, we dont revert the configurations at update.
-Any small updates in these configurations will be asked to be manually changed
-at the instance level manually. The new instances will not have this problem.
+an instance of a site is built, we dont revert the configurations at update
+like we do with other WS2 modules. Any small updates in these configurations 
+will be asked to be manually changed at the instance level manually. New 
+instances will not have this problem.
 
 
 ## Requirements
