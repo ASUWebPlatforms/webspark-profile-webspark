@@ -89,6 +89,7 @@ install:
   - captcha
   - schema_metatag
   - editoria11y
+  - decorative_image_widget
 themes:
   - bartik
   - seven
