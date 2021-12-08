@@ -90,6 +90,7 @@ install:
   - schema_metatag
   - editoria11y
   - decorative_image_widget
+  - block_field
 themes:
   - bartik
   - seven
