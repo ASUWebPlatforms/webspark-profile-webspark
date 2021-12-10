@@ -98,3 +98,12 @@ function webspark_update_9004(&$sandbox) {
   
   $module_installer->install(["decorative_image_widget"]);
 }
+
+/**
+ * Install new modules.
+ */
+function webspark_update_9005(&$sandbox) {
+  $module_installer = \Drupal::service("module_installer");
+
+  $module_installer->install(["block_field"]);
+}
