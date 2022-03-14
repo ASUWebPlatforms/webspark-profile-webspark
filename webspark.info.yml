@@ -91,6 +91,7 @@ install:
   - editoria11y
   - decorative_image_widget
   - block_field
+  - webspark_cas
 themes:
   - bartik
   - seven
