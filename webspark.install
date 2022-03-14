@@ -107,3 +107,12 @@ function webspark_update_9005(&$sandbox) {
 
   $module_installer->install(["block_field"]);
 }
+
+/**
+ * Install webspark_cas module.
+ */
+function webspark_update_9006(&$sandbox) {
+  $module_installer = \Drupal::service("module_installer");
+
+  $module_installer->install(["webspark_cas"]);
+}
