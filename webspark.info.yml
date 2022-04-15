@@ -93,6 +93,8 @@ install:
   - block_field
   - webspark_cas
   - webspark_webdir
+  - maxlength
+  - field_states_ui
 themes:
   - bartik
   - seven
