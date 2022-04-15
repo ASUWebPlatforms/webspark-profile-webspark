@@ -92,6 +92,7 @@ install:
   - decorative_image_widget
   - block_field
   - webspark_cas
+  - webspark_webdir
 themes:
   - bartik
   - seven
