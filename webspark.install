@@ -118,10 +118,12 @@ function webspark_update_9006(&$sandbox) {
 }
 
 /**
- * Install webspark_webdir module.
+ * Install webspark_webdir module and dependencies.
  */
 function webspark_update_9007(&$sandbox) {
   $module_installer = \Drupal::service("module_installer");
 
+  $module_installer->install(["maxlength"]);
+  $module_installer->install(["field_states_ui"]);
   $module_installer->install(["webspark_webdir"]);
 }
