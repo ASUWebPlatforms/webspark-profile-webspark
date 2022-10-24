@@ -7,6 +7,7 @@
 
 use Drupal\contact\Entity\ContactForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -34,6 +35,14 @@ function webspark_form_install_configure_submit($form, FormStateInterface $form_
   $block = $config_factory->getEditable('block.block.asubrandheader');
   $block->set('settings.asu_brand_header_block_title', $form_state->getValue('site_name'));
   $block->save(TRUE);
+
+  // If the ASURITE User ID is populated during installation
+  // then the CAS Username from the account of the admin user will be stored.
+  if(!empty($form_state->getValue('openasu_admin_asurite'))) {
+    $user = User::load(1);
+    $cas_user_manager = \Drupal::service('cas.user_manager');
+    $cas_user_manager->setCasUsernameForAccount($user, $form_state->getValue('openasu_admin_asurite'));
+  }
 }
 
 function webspark_install_tasks_alter(&$tasks, $install_state) {
