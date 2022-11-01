@@ -1,3 +1,4 @@
+uuid: c8b180c0-46de-40dd-b717-1b0058af40ff
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - filter.format.full_html
   module:
     - ckeditor
+_core:
+  default_config_hash: weN5_bB7CIiMYvkrDr44V2_YdjKeBG4yHcFuo9zoqKQ
 format: full_html
 editor: ckeditor
 settings:
@@ -48,6 +51,7 @@ settings:
             - AddResponsiveArea
             - WebsparkButton
             - WebsparkDivider
+            - HorizontalRule
             - WebsparkBlockquote
             - WebsparkHighlightedHeading
             - WebsparkLead
@@ -56,13 +60,13 @@ settings:
           items:
             - WebsparkTable
   plugins:
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
     stylescombo:
       styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.highlight-white|White Highlight\r\nspan.btn.btn-gold|Gold Button\r\nspan.btn.btn-maroon|Maroon Button\r\nspan.btn.btn-gray|Light Button\r\nspan.btn.btn-dark|Dark Button\r\ndiv.span.copy-divider.gold| Copy Divider Gold\r\ndiv.span.copy-divider.dark| Copy Divider Black\r\ndiv.span.copy-divider.maroon| Copy Divider Maroon"
     language:
       language_list: un
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
 image_upload:
   status: true
   scheme: public
