@@ -127,3 +127,16 @@ function webspark_update_9007(&$sandbox) {
   $module_installer->install(["field_states_ui"]);
   $module_installer->install(["webspark_webdir"]);
 }
+
+/**
+* Adding image media type as an option within Media types selectable in the Media Library for Full HTML and Basic HTML formats.
+*/
+function webspark_update_9008(&$sandbox) {
+    \Drupal::configFactory()->getEditable('filter.format.basic_html')
+        ->set('filters.media_embed.settings.allowed_media_types.image', image)
+        ->save();
+
+    \Drupal::configFactory()->getEditable('filter.format.full_html')
+        ->set('filters.media_embed.settings.allowed_media_types.image', image)
+        ->save();
+}
