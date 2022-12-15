@@ -133,10 +133,10 @@ function webspark_update_9007(&$sandbox) {
 */
 function webspark_update_9008(&$sandbox) {
     \Drupal::configFactory()->getEditable('filter.format.basic_html')
-        ->set('filters.media_embed.settings.allowed_media_types.image', image)
+        ->set('filters.media_embed.settings.allowed_media_types.image', 'image')
         ->save();
 
     \Drupal::configFactory()->getEditable('filter.format.full_html')
-        ->set('filters.media_embed.settings.allowed_media_types.image', image)
+        ->set('filters.media_embed.settings.allowed_media_types.image', 'image')
         ->save();
 }
