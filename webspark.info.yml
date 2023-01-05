@@ -3,6 +3,8 @@ type: profile
 core_version_requirement: ^9.0
 description: 'ASU custom profile.'
 version: 2.8.0
+distribution:
+  name: 'Webspark'
 install:
   # Webspark.
   - node

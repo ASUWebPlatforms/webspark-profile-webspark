@@ -59,3 +59,10 @@ function webspark_install_tasks_alter(&$tasks, $install_state) {
     'function' => 'Drupal\webspark_installer_forms\Form\WebsparkConfigureGAForm',
   ];
 }
+
+/**
+ * Implements hook_preprocess_template().
+ */
+function webspark_preprocess_install_page(&$variables) {
+  $variables['site_name'] = 'Webspark';
+}
