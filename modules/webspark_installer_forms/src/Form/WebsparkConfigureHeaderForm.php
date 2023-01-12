@@ -28,24 +28,39 @@ class WebsparkConfigureHeaderForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['#title'] = $this->t('Webspark Config: Header');
+    $form['#title'] = $this->t('Webspark Config: Parent Unit');
 
+    $form['explanation'] = [
+      '#markup' => '<h3>Add parent unit</h3><p>If this site is for a department/college/unit ' .
+        'that has a parent unit to be displayed in the site\'s header, enter that information below.' .
+        '<h4>Header example with Parent unit:</h4>' .
+        '<img src="/profiles/composer/webspark-profile-webspark/modules/webspark_installer_forms/img/parent-unit-header.jpg" ' .
+        'alt="Parent unit example" style="margin-top: 1rem; opacity: 0.6;" /></p>',
+    ];
     $form['parent_unit_name'] = [
       '#maxlength' => 50,
-      '#size' => 60,
+      '#size' => 50,
       '#title' => $this->t('Parent unit name'),
       '#type' => 'textfield',
       '#default_value' => '',
+      '#states' => [
+        'required' => [
+          ':input[name="parent_department_url"]' =>['filled' => TRUE],
+        ],
+      ],
     ];
     $form['parent_department_url'] = [
       '#maxlength' => 255,
       '#size' => 100,
       '#title' => $this->t('Parent Department URL'),
-      '#type' => 'textfield',
+      '#type' => 'url',
       '#default_value' => '',
+      '#states' => [
+        'required' => [
+          ':input[name="parent_unit_name"]' =>['filled' => TRUE],
+        ],
+      ],
     ];
-
-
     $form['actions'] = ['#type' => 'actions'];
     $form['actions']['submit'] = [
       '#type' => 'submit',
