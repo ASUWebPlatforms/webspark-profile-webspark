@@ -36,7 +36,9 @@ class WebsparkConfigureSitemapXMLForm extends ConfigFormBase {
         '(ex. https://mysite.engineering.asu.edu, https://topleveldomain.asu.edu). ' .
         'This will help with search results and SEO.</p>' .
         '<p>If the base URL is still TBD, leave this blank because it can be added ' .
-        'later under the Simple XML Sitemap settings.</p>',
+        'later under the Simple XML Sitemap settings.</p>' .
+        '<p><strong>NOTE:</strong> After this installation process is complete, go to /admin/config/system/cron ' .
+        'and "Run Cron" once so that this change takes effect immediately.</p>',
     ];
 
     $form['simplexml_base_url'] = [
@@ -56,10 +58,10 @@ class WebsparkConfigureSitemapXMLForm extends ConfigFormBase {
 
     return $form;
   }
+
   /**
    * {@inheritdoc}
    */
-
   public function validateForm(array &$form, FormStateInterface $form_state) {
     // Repurposed simpleXML module's validate form
     $base_url = $form_state->getValue('simplexml_base_url');
@@ -77,6 +79,8 @@ class WebsparkConfigureSitemapXMLForm extends ConfigFormBase {
     $config_factory->getEditable('simple_sitemap.settings')
       ->set('base_url', $form_state->getValue('simplexml_base_url'))
       ->save();
+    $generator = \Drupal::service('simple_sitemap.generator');
+    $generator->generate("cron");
   }
 
 }
