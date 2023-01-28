@@ -56,10 +56,6 @@ settings:
           items:
             - WebsparkTable
   plugins:
-    stylescombo:
-      styles: "mark|Highlight text copy\r\nspan.highlight-gold|Gold Highlight\r\nspan.highlight-black|Black Highlight\r\nspan.highlight-white|White Highlight"
-    language:
-      language_list: un
     drupallink:
       linkit_enabled: true
       linkit_profile: default
