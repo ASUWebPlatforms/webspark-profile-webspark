@@ -60,6 +60,11 @@ filters:
     weight: -40
     settings:
       default_view_mode: default
+      allowed_view_modes:
+        default: default
+        large: large
+        medium: medium
+        small: small
       allowed_media_types:
         cropped_image_sqare: cropped_image_sqare
         cropped_image_wide: cropped_image_wide
@@ -67,11 +72,6 @@ filters:
         image: image
         image_block_images: image_block_images
         remote_video: remote_video
-      allowed_view_modes:
-        default: default
-        large: large
-        medium: medium
-        small: small
   filter_autop:
     id: filter_autop
     provider: filter
