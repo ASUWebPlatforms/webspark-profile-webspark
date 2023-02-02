@@ -140,3 +140,12 @@ function webspark_update_9008(&$sandbox) {
         ->set('filters.media_embed.settings.allowed_media_types.image', 'image')
         ->save();
 }
+
+/**
+ * Applying new URL alias to all Drupal users
+ */
+function webspark_update_9009(&$sandbox) {
+  \Drupal::state()->set('configuration_locked', FALSE);
+  \Drupal::service('webspark.config_manager')->importConfigFile('pathauto.pattern.user_profile_urls');
+  \Drupal::state()->set('configuration_locked', TRUE);
+}
