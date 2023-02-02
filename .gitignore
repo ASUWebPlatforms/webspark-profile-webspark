@@ -1,0 +1,19 @@
+.history/
+.cache
+
+# NodeJS projects
+## Top-level
+
+## Per project - asu_brand
+
+# Drupal/external libraries
+/vendor/
+
+# PHPStorm (IDE) configurations
+.idea/
+
+# Config management script output
+/config/_config_changes.diff
+/config/**/_diff_commands.bash
+*APPLICABLE.patch
+.DS_Store*
