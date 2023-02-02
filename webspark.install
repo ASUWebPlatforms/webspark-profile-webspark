@@ -140,3 +140,33 @@ function webspark_update_9008(&$sandbox) {
         ->set('filters.media_embed.settings.allowed_media_types.image', 'image')
         ->save();
 }
+
+/**
+ * Adding Article content type fields.
+ */
+function webspark_update_9010(&$sandbox) {
+  // Unlock the configuration storage.
+  \Drupal::logger("webspark")->notice("Started updating article content type configs...");
+
+  \Drupal::state()->set('configuration_locked', FALSE);
+  // Importing new configs from webspark profile
+  \Drupal::service('webspark.config_manager')->importConfigFile('core.base_field_override.node.article.promote');
+  \Drupal::service('webspark.config_manager')->importConfigFile('core.date_format.article_date');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.field.node.article.field_author');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.field.node.article.field_byline');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.field.node.article.field_date_published');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.storage.node.field_author');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.storage.node.field_byline');
+  \Drupal::service('webspark.config_manager')->importConfigFile('field.storage.node.field_date_published');
+  // Update existing configs from webspark profile
+  \Drupal::service('webspark.config_manager')->updateConfigFile('core.entity_form_display.node.article.default');
+  \Drupal::service('webspark.config_manager')->updateConfigFile('core.entity_view_display.node.article.default');
+  \Drupal::service('webspark.config_manager')->updateConfigFile('core.entity_view_display.node.article.rss');
+  \Drupal::service('webspark.config_manager')->updateConfigFile('core.entity_view_display.node.article.teaser');
+  \Drupal::service('webspark.config_manager')->updateConfigFile('node.type.article');
+  // Lock the configuration storage.
+  \Drupal::state()->set('configuration_locked', TRUE);
+
+  \Drupal::logger("webspark")->notice("Updates to Article content type were attempted.");
+  // @TODO Not sure why simple sitemap XML setting isn't applying?
+}
