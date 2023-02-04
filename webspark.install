@@ -148,4 +148,39 @@ function webspark_update_9009(&$sandbox) {
   \Drupal::state()->set('configuration_locked', FALSE);
   \Drupal::service('webspark.config_manager')->importConfigFile('pathauto.pattern.user_profile_urls');
   \Drupal::state()->set('configuration_locked', TRUE);
+
+  $entities = [];
+  $entities['user'] = \Drupal::entityQuery('user')->execute();
+  $result = [];
+
+  foreach ($entities as $type => $entity_list) {
+    foreach ($entity_list as $entity_id) {
+      $result[] = [
+        'entity_type' => $type,
+        'id' => $entity_id,
+      ];
+    }
+  }
+
+  # Batch API
+  if (!isset($sandbox['current'])) {
+    $sandbox['current'] = 0;
+    $sandbox['max'] = count($result);
+  }
+  $limit = 50;
+  $result = array_slice($result, $sandbox['current'], $limit);
+
+  # Alias updates
+  foreach ($result as $row) {
+    $entity_storage = \Drupal::entityTypeManager()->getStorage($row['entity_type']);
+    $entity = $entity_storage->load($row['id']);
+    \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update');
+    $sandbox['current']++;
+  }
+
+  # More Batch API
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['current'] / $sandbox['max']);
+  if ($sandbox['#finished'] >= 1) {
+    return t('The batch URL Alias update is finished.');
+  }
 }
