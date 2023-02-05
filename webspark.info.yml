@@ -62,7 +62,6 @@ install:
   - linkit
   - current_page_crumb
   - pathauto
-  - webspark_isearch
   - media_library_form_element
   - admin_toolbar
   - allowed_formats
