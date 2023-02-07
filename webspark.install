@@ -142,6 +142,15 @@ function webspark_update_9008(&$sandbox) {
 }
 
 /**
+ * Uninstall webspark_isearch module.
+ */
+function webspark_update_9009(&$sandbox) {
+  $module_installer = \Drupal::service("module_installer");
+
+  $module_installer->uninstall(["webspark_isearch"]);
+}
+
+/**
  * Adding Article content type fields.
  */
 function webspark_update_9010(&$sandbox) {
