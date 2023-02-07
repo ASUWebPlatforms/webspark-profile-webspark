@@ -15,8 +15,8 @@ plugin: system_messages_block
 settings:
   id: system_messages_block
   label: Messages
-  provider: system
   label_display: '0'
+  provider: system
 visibility:
   node_type:
     id: node_type

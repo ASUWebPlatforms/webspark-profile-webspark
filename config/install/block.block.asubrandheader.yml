@@ -14,8 +14,8 @@ plugin: asu_brand_header
 settings:
   id: asu_brand_header
   label: 'ASU brand header'
-  provider: asu_brand
   label_display: '0'
+  provider: asu_brand
   asu_brand_header_block_title: ''
   asu_brand_header_block_parent_org: ''
   asu_brand_header_block_parent_org_url: ''
