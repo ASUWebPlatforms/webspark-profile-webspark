@@ -4,7 +4,6 @@ namespace Drupal\webspark_installer_forms\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * Provides the Google Analytics configuration form.
@@ -36,7 +35,8 @@ class WebsparkConfigureGAForm extends ConfigFormBase {
       '#title' => t('Do you have a Google Analytics account separate from the main ASU account?'),
     ];
     $form['google_analytics_account'] = [
-      '#description' => $this->t('This ID is unique to each site you want to track separately, and is in the form of UA-xxxxxxx-yy.'),
+      '#description' => $this->t('Enter your custom GA ID (ex. UA-xxxxxxx-yy) to send ' .
+        ' tracking information to from this site. Entering this ID will not affect or override ASU\'s main Google account.'),
       '#maxlength' => 20,
       '#placeholder' => 'UA-',
       '#size' => 20,
@@ -44,6 +44,9 @@ class WebsparkConfigureGAForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#states' => [
         'visible' => [
+          ':input[name="has_ga_account"]' =>['checked' => TRUE],
+        ],
+        'required' => [
           ':input[name="has_ga_account"]' =>['checked' => TRUE],
         ],
       ],

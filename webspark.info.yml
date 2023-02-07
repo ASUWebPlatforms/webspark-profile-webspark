@@ -3,6 +3,8 @@ type: profile
 core_version_requirement: ^9.0
 description: 'ASU custom profile.'
 version: 2.8.0
+distribution:
+  name: 'Webspark'
 install:
   # Webspark.
   - node
@@ -60,7 +62,6 @@ install:
   - linkit
   - current_page_crumb
   - pathauto
-  - webspark_isearch
   - media_library_form_element
   - admin_toolbar
   - allowed_formats
