@@ -153,7 +153,7 @@ function webspark_update_9009(&$sandbox) {
 /**
  * Adding Article content type fields.
  */
-function webspark_update_9010(&$sandbox) {
+function webspark_update_9011(&$sandbox) {
   // Unlock the configuration storage.
   \Drupal::logger("webspark")->notice("Started updating article content type configs...");
 

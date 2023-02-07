@@ -16,12 +16,12 @@ field_name: field_byline
 entity_type: node
 bundle: article
 label: Byline
-description: 'Use the "P" button in the WYSIWYG editor to get '
+description: 'Use the capital "P" button in the WYSIWYG editor to add a byline.'
 required: false
 translatable: false
 default_value:
   -
-    value: "<p class=\"lead\">Replace or delete this \"lead paragraph\" with your byline.</p>\r\n"
+    value: "<p class=\"lead\">Replace or delete this \"lead paragraph\" text with your byline text.</p>\r\n"
     format: basic_html
 default_value_callback: ''
 settings: {  }
