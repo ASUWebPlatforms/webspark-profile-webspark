@@ -153,7 +153,7 @@ function webspark_update_9009(&$sandbox) {
 /**
  * Applying new URL alias to all Drupal users
  */
-function webspark_update_9009(&$sandbox) {
+function webspark_update_9010(&$sandbox) {
   $apply_user_aliases = 1;
   ## If Pathauto pattern already exists for User entities, skip rest of update.
   $patterns_list = \Drupal::service('config.factory')->listAll($prefix = 'pathauto.pattern');
@@ -225,3 +225,4 @@ function webspark_update_9009(&$sandbox) {
     }
   }
 }
+
