@@ -151,6 +151,82 @@ function webspark_update_9009(&$sandbox) {
 }
 
 /**
+ * Applying new URL alias to all Drupal users
+ */
+function webspark_update_9010(&$sandbox) {
+  $apply_user_aliases = 1;
+  ## If Pathauto pattern already exists for User entities, skip rest of update.
+  $patterns_list = \Drupal::service('config.factory')->listAll($prefix = 'pathauto.pattern');
+  if (!empty($patterns_list)) {
+    foreach ($patterns_list as $value) {
+      $type = \Drupal::config($value)->get('type') ?? '';
+      if ($type === 'canonical_entities:user') {
+        \Drupal::service('messenger')
+          ->addMessage("Added new user ID URL pattern, but skipped user URL alias updates because another pattern already exists.");
+        $apply_user_aliases = 0;
+        break;
+      }
+    }
+  }
+  # Set new User alias pattern (but set last/lowest in priority)
+  \Drupal::state()->set('configuration_locked', FALSE);
+  \Drupal::service('webspark.config_manager')->importConfigFile('pathauto.pattern.user_profile_urls');
+  \Drupal::state()->set('configuration_locked', TRUE);
+
+  # Apply update to existing users IF they don't already have an alias.
+  if ($apply_user_aliases === 1) {
+    $orig = \Drupal::config('pathauto.settings')->get('update_action');
+    # Temporary pathauto setting change: If individual alias already exists, it will be skipped
+    \Drupal::state()->set('configuration_locked', FALSE);
+    \Drupal::service('config.factory')->getEditable('pathauto.settings')
+      ->set('update_action', PathautoGeneratorInterface::UPDATE_ACTION_NO_NEW)->save();
+    \Drupal::state()->set('configuration_locked', TRUE);
+
+    $entities = [];
+    $entities['user'] = \Drupal::entityQuery('user')->execute();
+    $result = [];
+    foreach ($entities as $type => $entity_list) {
+      foreach ($entity_list as $entity_id) {
+        $result[] = [
+          'entity_type' => $type,
+          'id' => $entity_id,
+        ];
+      }
+    }
+
+    ## Batch API
+    if (!isset($sandbox['current'])) {
+      $sandbox['current'] = 0;
+      $sandbox['max'] = count($result);
+    }
+    $limit = 50;
+    $result = array_slice($result, $sandbox['current'], $limit);
+
+    # Alias updates
+    foreach ($result as $row) {
+      $entity_storage = \Drupal::entityTypeManager()
+        ->getStorage($row['entity_type']);
+      $entity = $entity_storage->load($row['id']);
+      \Drupal::service('pathauto.generator')
+        ->updateEntityAlias($entity, 'update');
+      $sandbox['current']++;
+    }
+
+    # Restore original pathauto overwrite/update settings
+    \Drupal::state()->set('configuration_locked', FALSE);
+    \Drupal::service('config.factory')->getEditable('pathauto.settings')
+      ->set('update_action', $orig)->save();
+    \Drupal::state()->set('configuration_locked', TRUE);
+
+    # More Batch API
+    $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['current'] / $sandbox['max']);
+    if ($sandbox['#finished'] >= 1) {
+      return t('Adding URL aliases to user accounts that did not have an alias has been completed.');
+    }
+  }
+}
+
+/**
  * Adding Article content type fields.
  */
 function webspark_update_9011(&$sandbox) {
