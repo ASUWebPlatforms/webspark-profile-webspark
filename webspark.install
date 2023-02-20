@@ -255,3 +255,21 @@ function webspark_update_9011(&$sandbox) {
   \Drupal::logger("webspark")->notice("Updates to Article content type were attempted.");
   // @TODO Not sure why simple sitemap XML setting isn't applying?
 }
+
+/**
+ * Raising lower log message caps to 10K
+ */
+function webspark_update_9012(&$sandbox) {
+  // Unlock the configuration storage.
+  \Drupal::state()->set('configuration_locked', FALSE);
+  // Importing new configs from webspark profile
+  $limit = \Drupal::service('config.factory')->get('dblog.settings')->get('row_limit');
+  if ( $limit < 10000 && $limit > 0) {
+    \Drupal::service('config.factory')->getEditable('dblog.settings')->set('row_limit', 10000)->save();
+    \Drupal::logger("webspark")->notice("Logging threshold increased from %lim to 10K", ["%lim" => $limit]);
+  } else {
+    \Drupal::logger("webspark")->notice("Logging threshold already 10K or higher. Skipping increase.");
+  }
+  // Lock the configuration storage.
+  \Drupal::state()->set('configuration_locked', TRUE);
+}
