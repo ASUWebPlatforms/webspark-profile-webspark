@@ -283,4 +283,14 @@ function webspark_update_9013(&$sandbox) {
   $module_installer->install(["file_mdm"]);
   $module_installer->install(["sophron"]);
   $module_installer->install(["imagemagick"]);
+
+  // Importing configs for ImageMagick module.
+  \Drupal::state()->set('configuration_locked', FALSE);
+  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.file_metadata_plugin.getimagesize.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.settings.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.file_metadata_plugin.imagemagick_identify.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.settings.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('sophron.settings.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('system.image.yml');
+  \Drupal::state()->set('configuration_locked', TRUE);
 }
