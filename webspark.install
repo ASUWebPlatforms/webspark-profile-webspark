@@ -145,9 +145,13 @@ function webspark_update_9008(&$sandbox) {
  * Uninstall webspark_isearch module.
  */
 function webspark_update_9009(&$sandbox) {
-  $module_installer = \Drupal::service("module_installer");
-
-  $module_installer->uninstall(["webspark_isearch"]);
+  
+  // NOTE: The uninstall of the webspark_isearch module has been deferred
+  // to a future release due to dependencies on some of its fields, used
+  // by the webspark_webdir module. See WS2-1586 and WS2-1587 for more details.
+  
+  //$module_installer = \Drupal::service("module_installer");
+  //$module_installer->uninstall(["webspark_isearch"]);
 }
 
 /**
