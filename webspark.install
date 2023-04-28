@@ -290,11 +290,11 @@ function webspark_update_9013(&$sandbox) {
 
   // Importing configs for ImageMagick module.
   \Drupal::state()->set('configuration_locked', FALSE);
-  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.file_metadata_plugin.getimagesize.yml');
-  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.settings.yml');
-  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.file_metadata_plugin.imagemagick_identify.yml');
-  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.settings.yml');
-  \Drupal::service('webspark.config_manager')->importConfigFile('sophron.settings.yml');
-  \Drupal::service('webspark.config_manager')->importConfigFile('system.image.yml');
+  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.file_metadata_plugin.getimagesize');
+  \Drupal::service('webspark.config_manager')->importConfigFile('file_mdm.settings');
+  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.file_metadata_plugin.imagemagick_identify');
+  \Drupal::service('webspark.config_manager')->importConfigFile('imagemagick.settings');
+  \Drupal::service('webspark.config_manager')->importConfigFile('sophron.settings');
+  \Drupal::service('webspark.config_manager')->importConfigFile('system.image');
   \Drupal::state()->set('configuration_locked', TRUE);
 }
